@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>assoselected - a jQuery plugin</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.assoselected.min.js"></script>
+<script type="text/javascript" src="jquery.autocomplete.js"></script>
+<style>
+body,div,ul,ol,li,h1,h2,h3,h4,h5{padding: 0;margin: 0;}
+ol,ul {list-style: none;}
+body *{vertical-align:middle;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+body{background:#f5f5f5 url(images/gray_jean.png);font:12px/22px "simsun"}
+h1,h2,h3,h4,h5{font-family:Helvetica,Arial,sans-serif}
+h1 {margin:0;font-size:48px;line-height:100px;text-align:center;text-shadow:2px 1px 2px #999}
+h2 {margin:-30px 0 10px 150px;font-size:18px;line-height:20px;text-align:center;color: #999;text-shadow:0px 1px 1px #ccc}
+#assowrap{background-color:#fafafa;padding:40px 20px;width:920px;margin:10px auto 0;border:#eaeaea solid 5px}
+#tagarea{background-color:#EBF0F1;padding:15px;height:80px;margin:10px auto;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius:10px;overflow:auto}
+#tagarea a{display:inline-block; padding:1px 18px 1px 5px; margin:2px 3px; background:#F0E7CE url(images/close.png) no-repeat right 1px; color:#333; -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;text-decoration:none; float:left}
+#tagarea a:hover{background:#f9eab3 url(images/close.png) no-repeat right -17px}
+#checkarea{height:100px; background-color:#fbfbfb; border:#e0e0e0 solid 1px; margin:0 auto; position:relative; overflow:auto}
+#checkarea div{padding:3px 0; margin:0 auto; background-color:#F4F8F9; position:absolute}
+#checkarea ul{padding:30px 15px 6px; margin:0 auto}
+#checkarea li{ width:16%; background:none; float:left}
+#autoComplete {position:relative;margin:20px auto 0}
+#autoComplete input{width:20%;float:left}
+#autoComplete ul{z-index:99;padding:0px;margin:0px;border:1px #d1d1d1 solid;width:20%;max-height:265px;overflow:auto;background:white;display:none;position:absolute;left:0;top:26px;}
+#autoComplete li{list-style:none;}
+#autoComplete li a {display:block;color:#000;text-decoration:none;padding:1px 0 1px 5px;}
+#autoComplete li a:hover {color:#000;background:#ccc;border:none;}
+
+.doc{background-color:#fafafa;border:#666 dashed 1px;width:800px;margin:30px auto}
+.doc h3{background-color:#f6f6f6;background:-webkit-gradient(linear, 0 0, 0 100%, from(#dddddd), to(#f5f5f5));background:-moz-linear-gradient(top, #dddddd,#f5f5f5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#dddddd,endColorstr=#f5f5f5,grandientType=1);border-bottom:#666 dashed 1px;font-size:18px;line-height:30px;text-align:center}
+pre {color:#666;margin:12px 0;font-size:12px;padding:0 6px;font-family:monaco,"courier new",mono;text-shadow:0px 1px 1px #ccc}
+.contact{font:bold 18px/32px Helvetica,Arial,sans-serif;text-align:center}
+.contact a{color:#666;text-decoration:none}
+.contact a:hover{color:#069}
+</style>;
+</head>
+
+<body>
+
+<h1>assoselected</h1>
+<h2>a jQuery plugin</h2>
+<div id="assowrap">
+	<div id="tagarea" class="clearfix">
+	</div>
+</div>
+
+<div class="doc">
+	<h3>JS</h3>
+	<pre>
+	$(function(){
+		$.assoselected(
+			$('#tagarea'),           //插件对象  
+			codeArray,               //Json数据
+			{
+				isenter:true,    //是否开启录入框添加
+				ischeck:true,    //是否开启复选框添加
+				checkWidth:800   //插件宽度
+			}
+		)
+	})</pre>
+</div>
+
+<a href="https://github.com/monddy/assoselected"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub" /></a>
+
+<p class="contact"><a href="mailto:monddy.na@gmail.com">Monddy</a></p>
+
+<script type="text/javascript">
+var codeArray = [11231345,11123459,11132857,12934857,16273849,12948475,16328394,12283748,21273849,22987476,21635263,24875649,24985162,29837640,28374657,31002938,32987364,33556643,35884958,36743263,39827374,43278394,41728375,43874658,44327783,45874839,49857366,48767584,58473664,51625366,54321123,50697855,63948857,60181827,62837462,67856645,69054443,66487388,71002837,70098372,73647363,75483374,76557789,78405494,79000584,81828827,80998272,82736645,81237625,82736453,83746355,84776535,85745554,86334327,87756493,88769598,88675000,89783737,93029893,91029383,92228300,94838832,95847383,96847484,97898006,98747748,99848383];
+
+
+$(function(){
+	$.assoselected(
+		$('#tagarea'), 
+		codeArray, 
+		{
+			isenter:true,
+			ischeck:true,
+			checkWidth:800
+		}
+	)
+})
+
+</script>
+
+</body>
+</html>
